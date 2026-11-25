@@ -1,6 +1,6 @@
 <div align="center">
 
-# PARKOUR TEST
+# ![Logo](screenshots/20260717_214027.jpg)
 
 **An Experimental Puzzle-Parkour Experience**  
 *Explore. Solve. Overcome.*
