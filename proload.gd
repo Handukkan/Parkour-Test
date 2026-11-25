@@ -1,0 +1,4 @@
+extends ProgressBar
+
+func _physics_process(delta: float) -> void:
+	value = vars.loading_progress

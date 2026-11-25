@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://c201kqm66rjry"]
+
+[ext_resource type="Script" uid="uid://cdwyisxkkn5kh" path="res://pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="StyleBox" uid="uid://c016fpp546ijk" path="res://toggle_focus.tres" id="2_nwcfo"]
+[ext_resource type="Script" uid="uid://bnry2lbpqdy8w" path="res://musicslider.gd" id="3_2nc7s"]
+[ext_resource type="FontFile" uid="uid://pufjbys1b6u2" path="res://fonts/Roboto-Light.ttf" id="4_d3xb4"]
+[ext_resource type="Script" uid="uid://bbdfd1xr6snn3" path="res://sfxslider.gd" id="5_mxa3g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wyi4u"]
+font_size = 76
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdmo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
+bg_color = Color(1, 0.53333336, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05uyy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e8sti"]
+font = ExtResource("4_d3xb4")
+font_size = 26
+
+[node name="PauseMenu" type="Control" unique_id=1532936709]
+process_mode = 3
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="PausePanel" type="PanelContainer" parent="." unique_id=351922531]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25859374
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="PausePanel" unique_id=284214284]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PausePanel/Panel" unique_id=1858987950]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 48.0
+offset_bottom = 153.0
+grow_horizontal = 2
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_wyi4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="PausePanel/Panel" unique_id=1452667272]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99700004
+offset_top = 201.0
+offset_right = -0.007019043
+offset_bottom = 262.0
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hdmo1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nwcfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05uyy")
+text = "RESUME"
+
+[node name="Options" type="Button" parent="PausePanel/Panel" unique_id=1891783632]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99700004
+offset_top = 270.0
+offset_right = -0.007019043
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hdmo1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nwcfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05uyy")
+button_mask = 5
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="PausePanel/Panel" unique_id=1903003]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99700004
+offset_top = 336.0
+offset_right = -0.007019043
+offset_bottom = 397.0
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hdmo1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nwcfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05uyy")
+text = "EXIT"
+
+[node name="HomeOptions" type="PanelContainer" parent="." unique_id=1675169102]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.315625
+anchor_top = 0.097222224
+anchor_right = 0.9554688
+anchor_bottom = 0.8972222
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="HomeOptions" unique_id=615576953]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="HomeOptions/Panel" unique_id=393268013]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "×"
+
+[node name="Label" type="Label" parent="HomeOptions/Panel" unique_id=1595840704]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 318.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 43
+text = "O P T I O N S"
+
+[node name="GraphicsBtn" type="Button" parent="HomeOptions/Panel" unique_id=1143327781]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 117.0
+offset_right = 400.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 37
+text = "G R A P H I C S"
+flat = true
+alignment = 0
+
+[node name="AudioBtn" type="Button" parent="HomeOptions/Panel" unique_id=2025495702]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 222.0
+offset_right = 400.0
+offset_bottom = 299.0
+theme_override_font_sizes/font_size = 37
+text = "S O U N D"
+flat = true
+alignment = 0
+
+[node name="Graphics" type="PanelContainer" parent="." unique_id=881539270]
+visible = false
+layout_mode = 0
+anchor_left = 0.315625
+anchor_top = 0.097222224
+anchor_right = 0.9554688
+anchor_bottom = 0.8972222
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Graphics" unique_id=311970364]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="Graphics/Panel" unique_id=178618206]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "×"
+
+[node name="ShadowsBtn" type="CheckBox" parent="Graphics/Panel" unique_id=2104423709]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 88.999985
+offset_right = 141.0
+offset_bottom = 118.999985
+scale = Vector2(2.764, 2.764)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = ExtResource("2_nwcfo")
+text = " Shadows"
+icon_alignment = 1
+
+[node name="Bloom" type="CheckBox" parent="Graphics/Panel" unique_id=540001107]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 172.0
+offset_right = 141.0
+offset_bottom = 202.0
+scale = Vector2(2.764, 2.764)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = ExtResource("2_nwcfo")
+text = " Bloom"
+icon_alignment = 1
+
+[node name="Lens Flare" type="CheckBox" parent="Graphics/Panel" unique_id=1363530477]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 250.0
+offset_right = 146.0
+offset_bottom = 280.0
+scale = Vector2(2.764, 2.764)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = ExtResource("2_nwcfo")
+text = " Lens Flare"
+icon_alignment = 1
+
+[node name="SSAO" type="CheckBox" parent="Graphics/Panel" unique_id=1914367439]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 334.0
+offset_right = 146.0
+offset_bottom = 364.0
+scale = Vector2(2.764, 2.764)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = ExtResource("2_nwcfo")
+text = " Ambient Occlusion"
+icon_alignment = 1
+
+[node name="MotionBlur" type="CheckBox" parent="Graphics/Panel" unique_id=886460922]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 416.99997
+offset_right = 162.0
+offset_bottom = 446.99997
+scale = Vector2(2.764, 2.764)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = ExtResource("2_nwcfo")
+text = " Motion Blur"
+icon_alignment = 1
+
+[node name="High Resolution" type="CheckBox" parent="Graphics/Panel" unique_id=15056712]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 89.0
+offset_right = 538.0
+offset_bottom = 119.0
+scale = Vector2(2.764, 2.764)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = ExtResource("2_nwcfo")
+text = "High Resolution"
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Graphics/Panel" unique_id=960838900]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 318.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 43
+text = "G R A P H I C S"
+
+[node name="Audio" type="PanelContainer" parent="." unique_id=792548062]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.315625
+anchor_top = 0.097222224
+anchor_right = 0.9554688
+anchor_bottom = 0.8972222
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Audio" unique_id=1764581030]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="Audio/Panel" unique_id=114159171]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "×"
+
+[node name="Label" type="Label" parent="Audio/Panel" unique_id=1229129282]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 318.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 43
+text = "A U D I O"
+
+[node name="Music" type="HSlider" parent="Audio/Panel" unique_id=889197399]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 164.0
+offset_right = 543.0
+offset_bottom = 189.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_2nc7s")
+
+[node name="Label" type="Label" parent="Audio/Panel/Music" unique_id=1919672781]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -39.0
+offset_right = 102.0
+offset_bottom = -7.0
+text = "M u s i c"
+label_settings = SubResource("LabelSettings_e8sti")
+
+[node name="SFX" type="HSlider" parent="Audio/Panel" unique_id=714994174]
+layout_mode = 1
+offset_left = 29.0
+offset_top = 250.0
+offset_right = 540.0
+offset_bottom = 266.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_mxa3g")
+
+[node name="Label" type="Label" parent="Audio/Panel/SFX" unique_id=1121118543]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -39.0
+offset_right = 237.0
+offset_bottom = -7.0
+text = "S o u n d  E f f e c t s"
+label_settings = SubResource("LabelSettings_e8sti")
+
+[connection signal="drag_ended" from="Audio/Panel/Music" to="Audio/Panel/Music" method="_on_drag_ended"]
+[connection signal="value_changed" from="Audio/Panel/Music" to="Audio/Panel/Music" method="_on_value_changed"]
+[connection signal="drag_ended" from="Audio/Panel/SFX" to="Audio/Panel/SFX" method="_on_drag_ended"]
+[connection signal="value_changed" from="Audio/Panel/SFX" to="Audio/Panel/SFX" method="_on_value_changed"]

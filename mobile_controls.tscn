@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://b28vj6axvtriu"]
+
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://virtual_joystick/textures/joystick_tip.png" id="1_ppxiu"]
+[ext_resource type="Script" uid="uid://8ulb5reiilkg" path="res://mobile_controls.gd" id="1_ui5ya"]
+[ext_resource type="Script" uid="uid://brpc3o28a2sql" path="res://virtual_joystick/virtual_joystick.gd" id="2_rlj4p"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://virtual_joystick/textures/joystick_base_outline.png" id="3_j71cg"]
+[ext_resource type="Texture2D" uid="uid://bnffeb6aei6s2" path="res://ui/line-light/lineLight24.png" id="4_svdgb"]
+[ext_resource type="Texture2D" uid="uid://cloecpcjfd16x" path="res://ui/line-light/lineLight47.png" id="5_ui5ya"]
+[ext_resource type="Texture2D" uid="uid://cs6pd00g1q4mb" path="res://ui/line-light/lineLight46.png" id="7_s3714"]
+[ext_resource type="Texture2D" uid="uid://b806jxsitr7ow" path="res://ui/line-light/lineLight12.png" id="8_wlcjf"]
+[ext_resource type="Texture2D" uid="uid://crbxotnv2vwsh" path="res://ui/keyprompt/keyboard/keyboard_tab_outline.svg" id="9_2b8le"]
+[ext_resource type="Texture2D" uid="uid://b3ilsybryv67u" path="res://ui/keyprompt/keyboard/keyboard_q_outline.svg" id="10_gbkng"]
+
+[node name="MobileControls" type="Control" unique_id=599187426]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ui5ya")
+
+[node name="Virtual Joystick" type="Control" parent="." unique_id=92017122]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -343.0
+offset_right = 374.0
+offset_bottom = -8.0
+grow_vertical = 0
+script = ExtResource("2_rlj4p")
+joystick_mode = 1
+
+[node name="Base" type="TextureRect" parent="Virtual Joystick" unique_id=577036515]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("3_j71cg")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="Virtual Joystick/Base" unique_id=792420691]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("1_ppxiu")
+stretch_mode = 5
+
+[node name="Run" type="Control" parent="Virtual Joystick/Base" unique_id=333479481]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = -344.5
+offset_right = 145.68459
+offset_bottom = -304.5
+grow_vertical = 0
+scale = Vector2(0.745, 0.745)
+
+[node name="TouchScreenButton" type="TextureRect" parent="Virtual Joystick/Base/Run" unique_id=1974095242]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -64.0
+offset_right = 20.0
+offset_bottom = 16.0
+scale = Vector2(1.4546982, 1.5382545)
+texture = ExtResource("5_ui5ya")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Virtual Joystick/Base/Run" unique_id=216257981]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-102.01343, -279.19464)
+scale = Vector2(2.5838926, 4.563758)
+texture_normal = ExtResource("5_ui5ya")
+passby_press = true
+action = "Run"
+
+[node name="Jump" type="Control" parent="." unique_id=1334222124]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -178.0
+offset_right = -151.0
+offset_bottom = -138.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.38262, 1.4037312)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Jump" unique_id=984958599]
+position = Vector2(-60, -64)
+scale = Vector2(1.4875008, 1.4625001)
+texture_normal = ExtResource("4_svdgb")
+action = "Jump"
+
+[node name="Base2" type="TextureRect" parent="Jump" unique_id=1118345402]
+modulate = Color(0, 0, 0, 0.28235295)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.49625
+offset_top = -86.964386
+offset_right = 54.496246
+offset_bottom = 32.004272
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("1_ppxiu")
+stretch_mode = 5
+
+[node name="Interact" type="Control" parent="." unique_id=500527130]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -424.0
+offset_right = -203.0
+offset_bottom = -384.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Interact" unique_id=604079809]
+scale = Vector2(1.378, 1.378)
+texture_normal = ExtResource("7_s3714")
+action = "Interact"
+
+[node name="LeftClick" type="Control" parent="." unique_id=566640251]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -392.0
+offset_top = -364.0
+offset_right = -352.0
+offset_bottom = -324.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="LeftClick" unique_id=370075520]
+scale = Vector2(1.486, 1.486)
+texture_normal = ExtResource("7_s3714")
+action = "LeftClick"
+
+[node name="Pause" type="Control" parent="." unique_id=2117025356]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 21.000008
+offset_top = 21.0
+offset_right = 65.227005
+offset_bottom = 62.088
+scale = Vector2(0.552, 0.552)
+
+[node name="TouchScreenButton" type="TextureRect" parent="Pause" unique_id=1522268187]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+scale = Vector2(1.4546982, 1.5382545)
+texture = ExtResource("8_wlcjf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Pause" unique_id=244937730]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(1.507, 1.556)
+texture_normal = ExtResource("5_ui5ya")
+passby_press = true
+action = "Pause"
+
+[node name="Switch" type="Control" parent="." unique_id=1776017551]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -408.0
+offset_top = -221.0
+offset_right = -290.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Switch" unique_id=1326740837]
+scale = Vector2(1.747, 1.747)
+texture_normal = ExtResource("9_2b8le")
+action = "Switch"
+
+[node name="Drop" type="Control" parent="." unique_id=2016787287]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.00012
+offset_top = -127.0
+offset_right = -230.00012
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.799, 0.799)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Drop" unique_id=948310935]
+scale = Vector2(1.747, 1.747)
+texture_normal = ExtResource("10_gbkng")
+action = "Drop"

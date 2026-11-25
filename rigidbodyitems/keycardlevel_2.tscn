@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ctrb2w8go8t51"]
+
+[ext_resource type="Script" uid="uid://dxtdln75ohhyl" path="res://rigidbodyitems/rigid.gd" id="1_mrp1l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urf1h"]
+albedo_color = Color(0.8560673, 0.8560673, 0.85606724, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sy8p7"]
+material = SubResource("StandardMaterial3D_urf1h")
+size = Vector3(0.005, 0.241, 0.401)
+subdivide_height = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3it8"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a6rwf"]
+material = SubResource("StandardMaterial3D_b3it8")
+size = Vector3(0.013, 0.241, 0.072)
+subdivide_height = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujuyl"]
+size = Vector3(0.006, 0.239, 0.398)
+
+[node name="Keycardlevel2" type="RigidBody3D" unique_id=1854927235 groups=["rigiditem"]]
+collision_layer = 5
+mass = 0.06
+can_sleep = false
+continuous_cd = true
+script = ExtResource("1_mrp1l")
+item_name = "keycardlvl2"
+
+[node name="keycardlvl2" type="MeshInstance3D" parent="." unique_id=1520907840]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000004, 0, 0, 0)
+mesh = SubResource("BoxMesh_sy8p7")
+
+[node name="yellow" type="MeshInstance3D" parent="keycardlvl2" unique_id=681452247]
+transform = Transform3D(1, 1.7763568e-15, 0, 2.9087843e-14, 1, 0, -8.881784e-16, 0, 1, 0, 1.9073486e-06, 0.16428947)
+mesh = SubResource("BoxMesh_a6rwf")
+
+[node name="Label3D" type="Label3D" parent="keycardlvl2/yellow" unique_id=1094839258]
+transform = Transform3D(-2.4696934e-08, 2.0605739e-15, 0.565, 0, 1.16, -1.0036416e-15, -0.565, -9.007055e-23, -2.4696934e-08, 0.0072745085, 0, 0)
+offset = Vector2(0.045, 0)
+shaded = true
+modulate = Color(0.646029, 0.646029, 0.646029, 1)
+text = "2"
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="keycardlvl2/yellow" unique_id=287754153]
+transform = Transform3D(2.8849517e-08, 3.5527137e-15, 0.565, 0, 1.16, -1.7304166e-15, 0.66, -1.5529406e-22, -2.4696934e-08, -0.0066287518, 0, 0)
+offset = Vector2(0.045, 0)
+shaded = true
+modulate = Color(0.646029, 0.646029, 0.646029, 1)
+text = "2"
+outline_size = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=834416395]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000004, 0, 0, 0)
+shape = SubResource("BoxShape3D_ujuyl")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btphyu0a4y516"]
+
+[ext_resource type="Script" uid="uid://bmh6n6hdgtgfo" path="res://saveui.gd" id="1_fd3j3"]
+[ext_resource type="Texture2D" uid="uid://cqagtj0i307uh" path="res://ui/line-light/lineLight32.png" id="1_kimux"]
+
+[node name="Save" type="CanvasLayer" unique_id=1964554388]
+layer = 99
+visible = false
+script = ExtResource("1_fd3j3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1398978088]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -97.0
+offset_right = -27.0
+offset_bottom = -29.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_kimux")
+expand_mode = 1
+stretch_mode = 4

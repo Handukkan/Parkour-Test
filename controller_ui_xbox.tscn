@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://coq4lmnl0vaoh"]
+
+[ext_resource type="Script" uid="uid://c1svvkaklxkfv" path="res://controller_ui.gd" id="1_mac2d"]
+[ext_resource type="Texture2D" uid="uid://bu5lapi3fq4xq" path="res://ui/keyprompt/xbox/xbox_button_a_outline.svg" id="1_qv5t4"]
+[ext_resource type="FontFile" uid="uid://pufjbys1b6u2" path="res://fonts/Roboto-Light.ttf" id="2_mac2d"]
+[ext_resource type="Texture2D" uid="uid://b31qw05jt7x1t" path="res://ui/keyprompt/xbox/xbox_rb_outline.svg" id="3_7acud"]
+[ext_resource type="Texture2D" uid="uid://dn1xi4q6wn82x" path="res://ui/keyprompt/xbox/xbox_dpad_right_outline.svg" id="4_1ly0p"]
+[ext_resource type="Texture2D" uid="uid://wo37465i1mq0" path="res://ui/keyprompt/xbox/xbox_rt_outline.svg" id="5_xpw40"]
+[ext_resource type="Texture2D" uid="uid://dsgubb5dvqv0d" path="res://ui/keyprompt/xbox/xbox_button_x_outline.svg" id="6_h2gl5"]
+[ext_resource type="Texture2D" uid="uid://d3ctnmm3npixd" path="res://ui/keyprompt/xbox/xbox_dpad_down_outline.svg" id="8_7acud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5sii"]
+font = ExtResource("2_mac2d")
+font_size = 26
+
+[node name="ControllerUIXbox" type="Control" unique_id=224120796 node_paths=PackedStringArray("Jump", "Run", "Inv", "RT", "Interact", "Drop")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mac2d")
+Jump = NodePath("Jump")
+Run = NodePath("Run")
+Inv = NodePath("Inv")
+RT = NodePath("RT")
+Interact = NodePath("Interact")
+Drop = NodePath("Drop")
+
+[node name="Jump" type="TextureRect" parent="." unique_id=2109940527]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -114.0
+offset_right = 102.0
+offset_bottom = -47.0
+grow_vertical = 0
+texture = ExtResource("1_qv5t4")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Jump" unique_id=303684626]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 257.0
+offset_bottom = 49.0
+text = "Jump"
+label_settings = SubResource("LabelSettings_n5sii")
+vertical_alignment = 1
+
+[node name="Run" type="TextureRect" parent="." unique_id=1523083616]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -174.0
+offset_right = 102.0
+offset_bottom = -110.0
+grow_vertical = 0
+texture = ExtResource("3_7acud")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Run" unique_id=1893357030]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 257.0
+offset_bottom = 49.0
+text = "Run"
+label_settings = SubResource("LabelSettings_n5sii")
+vertical_alignment = 1
+
+[node name="Inv" type="TextureRect" parent="." unique_id=1771024962]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -233.0
+offset_right = 102.0
+offset_bottom = -169.0
+grow_vertical = 0
+texture = ExtResource("4_1ly0p")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Inv" unique_id=167595543]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 257.0
+offset_bottom = 49.0
+text = "Inventory Switch"
+label_settings = SubResource("LabelSettings_n5sii")
+vertical_alignment = 1
+
+[node name="RT" type="TextureRect" parent="." unique_id=1122902996]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -114.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_xpw40")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="RT" unique_id=1295320472]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 257.0
+offset_bottom = 49.0
+text = "Grab / Release"
+label_settings = SubResource("LabelSettings_n5sii")
+vertical_alignment = 1
+
+[node name="Interact" type="TextureRect" parent="." unique_id=1847999828]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -166.0
+offset_top = -174.0
+offset_bottom = -110.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_h2gl5")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Interact" unique_id=129221051]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 257.0
+offset_bottom = 49.0
+text = "Interact"
+label_settings = SubResource("LabelSettings_n5sii")
+vertical_alignment = 1
+
+[node name="Drop" type="TextureRect" parent="." unique_id=830207271]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -239.0
+offset_bottom = -175.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_7acud")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Drop" unique_id=689395761]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 257.0
+offset_bottom = 49.0
+text = "Drop Item"
+label_settings = SubResource("LabelSettings_n5sii")
+vertical_alignment = 1

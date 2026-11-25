@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://011cksegrhdm"]
+
+[ext_resource type="Script" uid="uid://dxtdln75ohhyl" path="res://rigidbodyitems/rigid.gd" id="1_2ooex"]
+[ext_resource type="PackedScene" uid="uid://68mvicx6c8sw" path="res://axe.tscn" id="2_0j6d2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7akg"]
+size = Vector3(0.1856836, 2.5546288, 0.23)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iho7a"]
+size = Vector3(0.34, 0.92, 0.645)
+
+[node name="Axe" type="RigidBody3D" unique_id=1727059625]
+collision_layer = 5
+mass = 0.45
+can_sleep = false
+continuous_cd = true
+script = ExtResource("1_2ooex")
+item_name = "Axe"
+
+[node name="Axe" parent="." unique_id=1209212932 instance=ExtResource("2_0j6d2")]
+transform = Transform3D(0.020100338, 0, 0.47957894, 0, 0.48, 0, -0.47957894, 0, 0.020100338, 0.11, 0.179, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=495958939]
+transform = Transform3D(0.020100338, 0, 0.47957894, 0, 0.48, 0, -0.47957894, 0, 0.020100338, 0.10839884, 0.34331095, 0.038202398)
+shape = SubResource("BoxShape3D_t7akg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2121173065]
+transform = Transform3D(0.4795789, -0.020100357, 8.7861457e-10, 0, -2.0981464e-08, -0.47999993, 0.020100357, 0.4795789, -2.0963059e-08, 0.09749979, 0.78923917, 0.29824573)
+shape = SubResource("BoxShape3D_iho7a")
+
+[editable path="Axe"]

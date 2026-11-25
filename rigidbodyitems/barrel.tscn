@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cbo5x17oyuax4"]
+
+[ext_resource type="Script" uid="uid://ke1udtjn2ps1" path="res://rigids.gd" id="1_4wwsg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kf7sn"]
+top_radius = 0.7
+bottom_radius = 0.7
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5f1do"]
+radius = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fg6oj"]
+size = Vector3(1.3988466, 2.031674, 1.4660279)
+
+[node name="Barrel" type="RigidBody3D" unique_id=280845165 groups=["notheavy"]]
+collision_layer = 5
+collision_mask = 137
+mass = 0.2
+script = ExtResource("1_4wwsg")
+teleport_zone = 6.745
+barrel = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=540707050]
+mesh = SubResource("CylinderMesh_kf7sn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1777330958]
+shape = SubResource("CylinderShape3D_5f1do")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=350845607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25517082, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1805256536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0037231445, -0.23249245, 0.008450508)
+shape = SubResource("BoxShape3D_fg6oj")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

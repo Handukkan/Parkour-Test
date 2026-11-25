@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q3xlaa3k143v"
+path="res://.godot/imported/Smash 4 (236).mp3-9d44cfd865aa8fa40ee06a27d1607522.mp3str"
+
+[deps]
+
+source_file="res://Smash 4 (236).mp3"
+dest_files=["res://.godot/imported/Smash 4 (236).mp3-9d44cfd865aa8fa40ee06a27d1607522.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

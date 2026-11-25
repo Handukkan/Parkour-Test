@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dbss1bm0yneo"]
+
+[ext_resource type="Script" uid="uid://b5cljcwxg6kpu" path="res://buttons.gd" id="1_pg40h"]
+[ext_resource type="AudioStream" uid="uid://vqqxoxqyov6x" path="res://electricity_on_click.mp3" id="2_5sm3h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sm3h"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q21lg"]
+material = SubResource("StandardMaterial3D_5sm3h")
+top_radius = 1.1
+bottom_radius = 1.1
+height = 0.11283203
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3p1pc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ixhct"]
+material = SubResource("StandardMaterial3D_3p1pc")
+top_radius = 0.9
+bottom_radius = 0.9
+height = 0.12290771
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pg40h"]
+height = 0.12
+radius = 1.208
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5sm3h"]
+height = 0.079
+radius = 1.276
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q21lg"]
+height = 0.042
+radius = 1.405
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7mpwi"]
+height = 0.35431397
+radius = 1.1
+
+[node name="Button" type="Area3D" unique_id=1415587329]
+script = ExtResource("1_pg40h")
+
+[node name="Model" type="StaticBody3D" parent="." unique_id=1043896446]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=1558344121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033916015, 0)
+mesh = SubResource("CylinderMesh_q21lg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model/MeshInstance3D" unique_id=1016049708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11218734, 0)
+mesh = SubResource("CylinderMesh_ixhct")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Model" unique_id=2013201113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.034699596, 0)
+shape = SubResource("CylinderShape3D_pg40h")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Model" unique_id=1586225455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0054412857, 0)
+shape = SubResource("CylinderShape3D_5sm3h")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Model" unique_id=1431665807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0055881366, 0)
+shape = SubResource("CylinderShape3D_q21lg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=845852699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15465698, 0)
+shape = SubResource("CylinderShape3D_7mpwi")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1536752798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74573326, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+text = "Coba cari benda yang mungkin lebih berat."
+font_size = 51
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=275750598]
+stream = ExtResource("2_5sm3h")
+volume_db = -15.0
+max_distance = 10.41
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

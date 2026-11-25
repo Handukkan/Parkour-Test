@@ -1,0 +1,351 @@
+[gd_scene format=3 uid="uid://l1dhtqji1d6x"]
+
+[ext_resource type="PackedScene" uid="uid://drdqiqus04ske" path="res://test_level_map.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_5rr72"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="2_hbghi"]
+[ext_resource type="Script" uid="uid://3k52uxa5mhq1" path="res://camrigid.gd" id="3_bjebc"]
+[ext_resource type="PackedScene" uid="uid://b28vj6axvtriu" path="res://mobile_controls.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://dttvpumkr2trs" path="res://shaderscanvas.tscn" id="3_rka8t"]
+[ext_resource type="Script" uid="uid://kpawnxxribnh" path="res://fovdebug.gd" id="4_ihfcg"]
+[ext_resource type="Script" uid="uid://dyu7r4ot5fvnv" path="res://staminabar.gd" id="5_5hph3"]
+[ext_resource type="PackedScene" uid="uid://coq4lmnl0vaoh" path="res://controller_ui_xbox.tscn" id="7_27bay"]
+[ext_resource type="Script" uid="uid://xyrm6yoayipn" path="res://death_screen.gd" id="10_1pe0h"]
+[ext_resource type="PackedScene" uid="uid://q1y6uw0ho8ts" path="res://captions.tscn" id="10_27bay"]
+[ext_resource type="PackedScene" uid="uid://c201kqm66rjry" path="res://pause_menu.tscn" id="10_gyffv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j7kpp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyffv"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rka8t"]
+font_size = 57
+
+[sub_resource type="Animation" id="Animation_27bay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sof0w"]
+resource_name = "death"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 0), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ggavl"]
+_data = {
+&"RESET": SubResource("Animation_27bay"),
+&"death": SubResource("Animation_sof0w")
+}
+
+[node name="Level_1" type="Node3D" unique_id=2016646952]
+script = ExtResource("1_5rr72")
+
+[node name="test_level_map" parent="." unique_id=1651052088 instance=ExtResource("1_3hls8")]
+
+[node name="Hammer" parent="test_level_map/Obstacles" parent_id_path=PackedInt32Array(1651052088, 1262904253) index="0" unique_id=2037633552 node_paths=PackedStringArray("player")]
+player = NodePath("../../../player")
+
+[node name="Hammer2" parent="test_level_map/Obstacles" parent_id_path=PackedInt32Array(1651052088, 1262904253) index="1" unique_id=501610644 node_paths=PackedStringArray("player")]
+player = NodePath("../../../player")
+
+[node name="GrabbingGun" parent="test_level_map/Objects/Pickupables" parent_id_path=PackedInt32Array(1651052088, 131662826) index="0" unique_id=2071512154 node_paths=PackedStringArray("player", "captions")]
+collision_layer = 4
+player = NodePath("../../../../player")
+captions = NodePath("../../../../CanvasLayer/Captions")
+
+[node name="Barrel" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="0" unique_id=1239284516 node_paths=PackedStringArray("player")]
+can_sleep = false
+player = NodePath("../../../../player")
+
+[node name="Barrel2" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="1" unique_id=172206395 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Barrel3" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="2" unique_id=661134143 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Cube" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="3" unique_id=707169418 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Cube2" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="4" unique_id=1805345876 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Barrel4" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="5" unique_id=1590894855 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Barrel5" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="6" unique_id=616888240 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Barrel6" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="7" unique_id=797812459 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Barrel7" parent="test_level_map/Objects/Rigids" parent_id_path=PackedInt32Array(1651052088, 1028605632) index="8" unique_id=1930136910 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../player")
+
+[node name="Deatharea" parent="test_level_map" index="24" unique_id=1529729631 node_paths=PackedStringArray("player")]
+player = NodePath("../../player")
+
+[node name="player" parent="." unique_id=1529731561 node_paths=PackedStringArray("Rigidbody", "lensflare", "interactbtn", "grabbtn", "controller_ui", "jumpbtndisable") groups=["Player"] instance=ExtResource("2_hbghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9338284, 11.06837, 34.807922)
+floor_stop_on_slope = false
+Rigidbody = NodePath("../RigidBody3D")
+lensflare = NodePath("../CanvasLayer/shaderscanvas/TextureRect")
+interactbtn = NodePath("../CanvasLayer/MobileControls/Interact")
+grabbtn = NodePath("../CanvasLayer/MobileControls/LeftClick")
+controller_ui = NodePath("../CanvasLayer/ControllerUIXbox")
+FOV_LERP_SPEED = 4.0
+jumpbtndisable = NodePath("../CanvasLayer/MobileControls/Jump/Base2")
+current_hand = "Empty"
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="player" unique_id=1670782846]
+remote_path = NodePath("../../RigidBody3D")
+update_scale = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1600565540]
+transform = Transform3D(1, 0, 0, 0, 0.9795753, 0.20107792, 0, -0.20107792, 0.9795753, -6.9338284, 11.986042, 37.042675)
+top_level = true
+fov = 90.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=2018013316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9338284, 11.06837, 34.807922)
+visible = false
+collision_layer = 10
+mass = 0.5
+script = ExtResource("3_bjebc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=854144260]
+shape = SubResource("CapsuleShape3D_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=21389213]
+mesh = SubResource("CapsuleMesh_j7kpp")
+
+[node name="Marker3D" type="Marker3D" parent="RigidBody3D" unique_id=1236664381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94290733, 2.2024498)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275078332]
+layer = 9
+
+[node name="shaderscanvas" parent="CanvasLayer" unique_id=39526387 instance=ExtResource("3_rka8t")]
+
+[node name="Radialblur" parent="CanvasLayer/shaderscanvas" index="0" unique_id=1344400809]
+player_path = NodePath("../../../player")
+
+[node name="TextureRect" parent="CanvasLayer/shaderscanvas" index="1" unique_id=1240543710 node_paths=PackedStringArray("sun", "camera")]
+sun = NodePath("../../../test_level_map/DirectionalLight3D")
+camera = NodePath("../../../player/HEAD/SwayPivot/Camera3D")
+
+[node name="MobileControls" parent="CanvasLayer" unique_id=599187426 instance=ExtResource("3_hn12h")]
+
+[node name="Base2" parent="CanvasLayer/MobileControls/Jump" parent_id_path=PackedInt32Array(599187426, 1334222124) index="1" unique_id=1118345402]
+offset_left = -77.86115
+offset_top = -82.69006
+offset_right = 40.754204
+offset_bottom = 34.14142
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Switch" parent="CanvasLayer/MobileControls" index="5" unique_id=1776017551]
+offset_left = -411.0
+offset_top = -243.0
+offset_right = -293.0
+offset_bottom = -139.0
+grow_horizontal = 0
+
+[node name="ControllerUIXbox" parent="CanvasLayer" unique_id=224120796 instance=ExtResource("7_27bay")]
+
+[node name="StaminaBar" type="ProgressBar" parent="CanvasLayer" unique_id=418504172]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_gyffv")
+value = 74.0
+show_percentage = false
+script = ExtResource("5_5hph3")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2067544132 node_paths=PackedStringArray("color_radial")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "FOV: "
+label_settings = SubResource("LabelSettings_rka8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_ihfcg")
+id = 1
+color_radial = NodePath("../shaderscanvas/Radialblur")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1310652566 node_paths=PackedStringArray("color_radial")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 76.0
+offset_right = 103.0
+offset_bottom = 154.0
+grow_horizontal = 2
+text = "Radial: "
+label_settings = SubResource("LabelSettings_rka8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_ihfcg")
+id = 2
+color_radial = NodePath("../shaderscanvas/Radialblur")
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=1676439899 node_paths=PackedStringArray("color_radial")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 593.0
+offset_right = 70.0
+offset_bottom = 671.0
+grow_horizontal = 2
+text = "Stamina: "
+label_settings = SubResource("LabelSettings_rka8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_ihfcg")
+id = 3
+color_radial = NodePath("../shaderscanvas/Radialblur")
+
+[node name="Crosshair" type="Control" parent="CanvasLayer" unique_id=476825806]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Crosshair" unique_id=786480858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -1.0
+offset_right = -9.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Crosshair" unique_id=683432504]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 19.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Crosshair" unique_id=1252767394]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -15.0
+offset_right = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/Crosshair" unique_id=337289263]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 7.0
+offset_right = 1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Captions" parent="CanvasLayer" unique_id=1690358622 instance=ExtResource("10_27bay")]
+visible = false
+
+[node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=170410896]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_1pe0h")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DeathScreen" unique_id=1638477043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/DeathScreen" unique_id=902472869]
+libraries/ = SubResource("AnimationLibrary_ggavl")
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1532936709 instance=ExtResource("10_gyffv")]
+visible = false
+
+[editable path="test_level_map"]
+[editable path="test_level_map/Obstacles/Hammer"]
+[editable path="test_level_map/Obstacles/Hammer2"]
+[editable path="player"]
+[editable path="CanvasLayer/shaderscanvas"]
+[editable path="CanvasLayer/MobileControls"]
+[editable path="CanvasLayer/ControllerUIXbox"]
+[editable path="CanvasLayer/Captions"]
+[editable path="CanvasLayer/PauseMenu"]

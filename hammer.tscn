@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://d1l883ff6v7cs"]
+
+[ext_resource type="Script" uid="uid://c2l64f2m17se5" path="res://hammer.gd" id="1_qnip4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lpydf"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 4.655797
+radial_segments = 122
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qnip4"]
+height = 4.655797
+radius = 0.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3n4lx"]
+height = 4.655797
+radius = 0.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ium0r"]
+height = 4.655797
+radius = 0.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0cii7"]
+height = 4.655797
+radius = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7mb5m"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 3.8551114
+radial_segments = 122
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3n4lx"]
+size = Vector3(1.9819336, 3.5168457, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3n4lx"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 3.8785489
+radial_segments = 122
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mb5m"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_3n4lx"]
+material = SubResource("StandardMaterial3D_7mb5m")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnip4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qnip4"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 3.3833358
+radial_segments = 122
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7mb5m"]
+height = 4.003
+radius = 0.15
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mb5m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnip4"]
+albedo_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
+metallic = 0.65
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ium0r"]
+material = SubResource("StandardMaterial3D_qnip4")
+top_radius = 0.0
+height = 1.01
+
+[node name="Hammer" type="StaticBody3D" unique_id=501610644]
+script = ExtResource("1_qnip4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=765564056]
+transform = Transform3D(1, 0, 0, 0, 0.9631625, -0.26891983, 0, 0.2689198, 0.96316254, -4.2933064, 1.9298279, -0.64441204)
+mesh = SubResource("CylinderMesh_lpydf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=357317180]
+transform = Transform3D(1, 0, 0, 0, 0.9631625, -0.26891983, 0, 0.2689198, 0.96316254, -4.2933064, 1.9298279, -0.64441204)
+shape = SubResource("CylinderShape3D_qnip4")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1424990301]
+transform = Transform3D(1, 0, 0, 0, 0.9631624, 0.26891983, 0, -0.2689198, 0.96316254, -4.2933064, 1.9298279, 0.6194413)
+mesh = SubResource("CylinderMesh_lpydf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1822006429]
+transform = Transform3D(1, 0, 0, 0, 0.9631624, 0.26891983, 0, -0.2689198, 0.96316254, -4.2933064, 1.9298279, 0.6194413)
+shape = SubResource("CylinderShape3D_3n4lx")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=465162008]
+transform = Transform3D(1, 0, 0, 0, 0.9631625, -0.26891983, 0, 0.2689198, 0.96316254, 4.1830573, 1.9298279, -0.6407505)
+mesh = SubResource("CylinderMesh_lpydf")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=39282708]
+transform = Transform3D(1, 0, 0, 0, 0.9631625, -0.26891983, 0, 0.2689198, 0.96316254, 4.1830573, 1.9298279, -0.6407505)
+shape = SubResource("CylinderShape3D_ium0r")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=727118168]
+transform = Transform3D(1, 0, 0, 0, 0.9631624, 0.26891983, 0, -0.2689198, 0.96316254, 4.1830573, 1.9298279, 0.60603654)
+mesh = SubResource("CylinderMesh_lpydf")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2020778423]
+transform = Transform3D(1, 0, 0, 0, 0.9631624, 0.26891983, 0, -0.2689198, 0.96316254, 4.1830573, 1.9298279, 0.60603654)
+shape = SubResource("CylinderShape3D_0cii7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=659443672]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.3233204, 4.2572722, 0)
+mesh = SubResource("CylinderMesh_7mb5m")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=680516707]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.4107108, 5.1559863, 0)
+shape = SubResource("BoxShape3D_3n4lx")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=727847690]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.5920942, 5.1559863, 0)
+shape = SubResource("BoxShape3D_3n4lx")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1248201246]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.3969007, 4.2572722, 0)
+mesh = SubResource("CylinderMesh_3n4lx")
+
+[node name="Hammer" type="RigidBody3D" parent="." unique_id=621231460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2526226, 0)
+collision_layer = 3
+mass = 15.0
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Hammer" unique_id=1411663293]
+mesh = SubResource("BoxMesh_3n4lx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hammer" unique_id=1276500232]
+shape = SubResource("BoxShape3D_qnip4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Hammer" unique_id=450874442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5782194, 0)
+mesh = SubResource("CylinderMesh_qnip4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Hammer" unique_id=712271255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8880515, 0)
+shape = SubResource("CylinderShape3D_7mb5m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hammer" unique_id=1351661655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6935415, 0)
+mesh = SubResource("BoxMesh_3n4lx")
+
+[node name="Area3D" type="Area3D" parent="Hammer/MeshInstance3D" unique_id=2092954053]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hammer/MeshInstance3D/Area3D" unique_id=274478509]
+shape = SubResource("BoxShape3D_7mb5m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Hammer/MeshInstance3D" unique_id=1475475427]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.961)
+mesh = SubResource("CylinderMesh_ium0r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hammer" unique_id=1108964406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6935415, 0)
+shape = SubResource("BoxShape3D_7mb5m")
+
+[node name="Handle" type="StaticBody3D" parent="." unique_id=680030086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2526226, 0)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="Handle" unique_id=846328508]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../Hammer")
+exclude_nodes_from_collision = false
+motor/enable = true
+motor/target_velocity = 0.08726646
+motor/max_impulse = 500.0
+
+[connection signal="body_entered" from="Hammer/MeshInstance3D/Area3D" to="." method="_on_body_entered"]

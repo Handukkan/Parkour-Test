@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cbn1oliyuwlri"]
+
+[ext_resource type="Script" uid="uid://uifda65ejbra" path="res://aienemy.gd" id="1_0dtoe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6srrr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dtoe"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ksi4y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0dtoe"]
+radius = 0.655
+height = 2.175
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1088317952]
+script = ExtResource("1_0dtoe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2130814372]
+mesh = SubResource("CapsuleMesh_6srrr")
+surface_material_override/0 = SubResource("StandardMaterial3D_0dtoe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=527277495]
+shape = SubResource("CapsuleShape3D_ksi4y")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=692598008]
+target_desired_distance = 2.0
+path_max_distance = 100.01
+
+[node name="DamageArea" type="Area3D" parent="." unique_id=1320255936]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea" unique_id=1735856337]
+shape = SubResource("CapsuleShape3D_0dtoe")
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

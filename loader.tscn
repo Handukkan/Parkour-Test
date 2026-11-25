@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://o5r6hcjaid44"]
+
+[ext_resource type="Script" uid="uid://cir7qt2wg7815" path="res://loading.gd" id="1_hyeqr"]
+[ext_resource type="FontFile" uid="uid://pufjbys1b6u2" path="res://fonts/Roboto-Light.ttf" id="2_ejomr"]
+[ext_resource type="Script" uid="uid://slgg4pfcceen" path="res://proload.gd" id="2_xgyeg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hfjkd"]
+font = ExtResource("2_ejomr")
+font_size = 65
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p48do"]
+bg_color = Color(0.9428228, 0.94282264, 0.94282264, 1)
+
+[node name="loader" type="Control" unique_id=29273714]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyeqr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=168653511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=525537015]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -97.0
+offset_right = 310.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 65
+text = "Loading..."
+label_settings = SubResource("LabelSettings_hfjkd")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=990795284]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_p48do")
+value = 70.0
+show_percentage = false
+script = ExtResource("2_xgyeg")

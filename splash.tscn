@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dp0ffmwp22bxn"]
+
+[ext_resource type="Script" uid="uid://bg4nxp84okgem" path="res://splash.gd" id="1_50j67"]
+[ext_resource type="VideoStream" uid="uid://d20ojkuyp1og7" path="res://videos/km_20260328_720p_24f_20260328_160926.ogv" id="2_13jq6"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_13jq6"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1561376691]
+script = ExtResource("1_50j67")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=962533025]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=971179836]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_13jq6")
+autoplay = true
+expand = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1757808959]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-596, 57)
+scale = Vector2(20.171875, 4.8671875)
+texture_normal = ExtResource("3_13jq6")
+action = "ui_accept"

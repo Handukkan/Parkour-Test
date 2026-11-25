@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c6ljgvrq0l8c"]
+
+[ext_resource type="Script" uid="uid://j5rsyikrsro3" path="res://deadzone.gd" id="1_s0g1x"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t3eke"]
+top_radius = 0.2841797
+bottom_radius = 0.2841797
+height = 3.37
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0g1x"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nrdsm"]
+material = SubResource("StandardMaterial3D_s0g1x")
+top_radius = 0.284
+bottom_radius = 0.0
+height = 0.903
+
+[sub_resource type="BoxMesh" id="BoxMesh_t3eke"]
+size = Vector3(1.286, 0.85339355, 1.243)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3eke"]
+size = Vector3(1.102, 5.07464, 1.093)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0g1x"]
+size = Vector3(0.721, 5.075, 0.833)
+
+[node name="Spikes" type="StaticBody3D" unique_id=1271888606]
+
+[node name="Pillar1" type="MeshInstance3D" parent="." unique_id=1975940700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37423074, -0.9003856, 0)
+mesh = SubResource("CylinderMesh_t3eke")
+
+[node name="Spikes" type="MeshInstance3D" parent="Pillar1" unique_id=700133678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.113909, 0)
+mesh = SubResource("CylinderMesh_nrdsm")
+
+[node name="Pillar2" type="MeshInstance3D" parent="." unique_id=2067536207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3363651, -0.9003856, 0)
+mesh = SubResource("CylinderMesh_t3eke")
+
+[node name="Spikes" type="MeshInstance3D" parent="Pillar2" unique_id=1613866351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.113909, 0)
+mesh = SubResource("CylinderMesh_nrdsm")
+
+[node name="Pillar3" type="MeshInstance3D" parent="." unique_id=1083229265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3681845, -0.9003856, -0.66842306)
+mesh = SubResource("CylinderMesh_t3eke")
+
+[node name="Spikes" type="MeshInstance3D" parent="Pillar3" unique_id=1563090651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.113909, 0)
+mesh = SubResource("CylinderMesh_nrdsm")
+
+[node name="Pillar4" type="MeshInstance3D" parent="." unique_id=1320605193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34241134, -0.9003856, -0.66842306)
+mesh = SubResource("CylinderMesh_t3eke")
+
+[node name="Spikes" type="MeshInstance3D" parent="Pillar4" unique_id=1519391785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.113909, 0)
+mesh = SubResource("CylinderMesh_nrdsm")
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1357920946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1782752, -0.34147763)
+mesh = SubResource("BoxMesh_t3eke")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1599528002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92381984, -0.35604584)
+shape = SubResource("BoxShape3D_t3eke")
+
+[node name="Deatharea" type="Area3D" parent="." unique_id=413932218]
+script = ExtResource("1_s0g1x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deatharea" unique_id=2079370672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92381984, -0.35604584)
+shape = SubResource("BoxShape3D_s0g1x")
+
+[connection signal="body_entered" from="Deatharea" to="Deatharea" method="_on_body_entered"]
