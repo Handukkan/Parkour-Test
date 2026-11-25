@@ -73,27 +73,13 @@ A look into the world of Parkour Test.
 <!-- Replace the placeholders with actual repository image paths. -->
 <div align="center">
 
-| Gameplay | Environment |
+| Gameplay | Core Mechanics |
 | :---: | :---: |
-| ![Gameplay Screenshot](screenshots/gameplay.png) | ![Environment Screenshot](screenshots/environment.png) |
+| ![Gameplay Screenshot](screenshots/gameplay.png) | ![Environment Screenshot](screenshots/core.png) |
 
-| Puzzle Interaction | Level Design |
+| Puzzle Interaction | Level Finish Line |
 | :---: | :---: |
 | ![Puzzle Screenshot](screenshots/puzzle.png) | ![Level Screenshot](screenshots/level.png) |
-
-</div>
-
----
-
-## Gameplay Footage
-
-Want to see Parkour Test in action?
-
-<!-- Replace with an actual GIF or video link. -->
-<div align="center">
-
-![Gameplay Demonstration](screenshots/gameplay-demo.gif)  
-*Gameplay demonstration.*
 
 </div>
 
