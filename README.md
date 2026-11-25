@@ -75,11 +75,11 @@ A look into the world of Parkour Test.
 
 | Gameplay | Core Mechanics |
 | :---: | :---: |
-| ![Gameplay Screenshot](screenshots/gameplay.png) | ![Environment Screenshot](screenshots/core.png) |
+| ![Gameplay Screenshot](screenshots/2W7Yxc.jpg) | ![Environment Screenshot](screenshots/NjHuup.jpg) |
 
 | Puzzle Interaction | Level Finish Line |
 | :---: | :---: |
-| ![Puzzle Screenshot](screenshots/puzzle.png) | ![Level Screenshot](screenshots/level.png) |
+| ![Puzzle Screenshot](screenshots/C28JFU.png) | ![Level Screenshot](screenshots/WKeFap.jpg) |
 
 </div>
 
