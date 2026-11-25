@@ -79,7 +79,7 @@ A look into the world of Parkour Test.
 
 | Puzzle Interaction | Level Finish Line |
 | :---: | :---: |
-| ![Puzzle Screenshot](screenshots/C28JFU.png) | ![Level Screenshot](screenshots/WKeFap.jpg) |
+| ![Puzzle Screenshot](screenshots/C28JFU.png) | ![Level Screenshot](screenshots/WKeFap.png) |
 
 </div>
 
